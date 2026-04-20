@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dev Kumar — RAG & Knowledge Graph Engineer</title>
+  <meta name="description" content="Dev Kumar — Senior Software Engineer shipping production RAG systems, Neo4j knowledge graphs, and .NET/Azure platforms." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&family=Satoshi:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,600,700,900&display=swap" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="#top" class="nav__logo">
+      <span class="nav__logo-mark">◆</span>
+      <span class="nav__logo-text">DK</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="#work">Work</a></li>
+      <li><a href="#architecture">Architecture</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__grid"></div>
+      <div class="hero__glow"></div>
+    </div>
+
+    <div class="hero__content">
+      <div class="hero__tag">
+        <span class="hero__tag-dot"></span>
+        <span>Available · Chicago, IL</span>
+      </div>
+
+      <h1 class="hero__title">
+        I ship <span class="accent">RAG systems</span><br />
+        and <span class="accent">knowledge graphs</span><br />
+        that run in <span class="italic">production.</span>
+      </h1>
+
+      <p class="hero__sub">
+        Senior Software Engineer, 7+ years. I take document corpora, vector stores, and Neo4j
+        schemas from architecture through <span class="mono">.NET / Azure</span> production —
+        not prototypes, not research. Just systems that ship and stay up.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#work" class="btn btn--primary">
+          See the work
+          <span class="btn__arrow">→</span>
+        </a>
+        <a href="resume.pdf" class="btn btn--ghost" target="_blank" rel="noopener">
+          Download résumé
+        </a>
+      </div>
+
+      <div class="hero__stack">
+        <span class="hero__stack-label">Core stack</span>
+        <span class="hero__stack-item">.NET 8 / C#</span>
+        <span class="hero__stack-sep">·</span>
+        <span class="hero__stack-item">Neo4j / Cypher</span>
+        <span class="hero__stack-sep">·</span>
+        <span class="hero__stack-item">Azure OpenAI</span>
+        <span class="hero__stack-sep">·</span>
+        <span class="hero__stack-item">Azure AI Search</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metrics strip -->
+  <section class="metrics">
+    <div class="metrics__row">
+      <div class="metric">
+        <div class="metric__num">5M<span class="metric__plus">+</span></div>
+        <div class="metric__label">Documents indexed<br />in production RAG</div>
+      </div>
+      <div class="metric">
+        <div class="metric__num">50K<span class="metric__plus">+</span></div>
+        <div class="metric__label">Daily queries served<br />sub-2s p95 latency</div>
+      </div>
+      <div class="metric">
+        <div class="metric__num">40<span class="metric__plus">+</span></div>
+        <div class="metric__label">Relationship types<br />in company-wide graph</div>
+      </div>
+      <div class="metric">
+        <div class="metric__num">42<span class="metric__unit">%</span></div>
+        <div class="metric__label">Relevance lift<br />vs. baseline search</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why this role -->
+  <section class="passion" id="why">
+    <div class="section__label">
+      <span class="section__num">01</span>
+      <span>Why this role</span>
+    </div>
+
+    <div class="passion__grid">
+      <h2 class="passion__heading">
+        I've been waiting for a brief like <span class="accent italic">this one.</span>
+      </h2>
+
+      <div class="passion__body">
+        <p>
+          Most "AI engineer" roles today are prototyping dressed up as production. This one is
+          the real thing — <strong>applied engineering, not research.</strong> Shipping a RAG
+          pipeline over a real document corpus. Standing up a knowledge graph that becomes the
+          system-of-record. Owning it on a ground-floor team.
+        </p>
+        <p>
+          That's the exact shape of work I've been doing for the last two years at Sprouts AI
+          and Resilience Inc — and frankly, it's what I came to Chicago to build. RAG is where
+          retrieval, structure, and language models finally stop being three separate conversations.
+          Knowledge graphs are how you turn a pile of PDFs into something a company can
+          actually reason over.
+        </p>
+        <p>
+          I don't want to write another paper. I want to ship the platform.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture diagram -->
+  <section class="architecture" id="architecture">
+    <div class="section__label">
+      <span class="section__num">02</span>
+      <span>How I think about it</span>
+    </div>
+
+    <h2 class="architecture__heading">
+      A RAG + knowledge graph system,<br />
+      the way I've actually <span class="accent">shipped it.</span>
+    </h2>
+
+    <p class="architecture__caption">
+      Below is the reference architecture I've deployed on Azure in production — every box
+      corresponds to code I've written and owned, not a slide.
+    </p>
+
+    <div class="architecture__diagram">
+      <svg viewBox="0 0 1200 720" xmlns="http://www.w3.org/2000/svg" aria-label="RAG + Knowledge Graph architecture diagram">
+        <defs>
+          <!-- Arrow marker -->
+          <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#00e5ff" />
+          </marker>
+          <marker id="arrow-dim" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#555" />
+          </marker>
+          <!-- Cyan glow -->
+          <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+        </defs>
+
+        <!-- Column dividers (subtle) -->
+        <line x1="300" y1="60" x2="300" y2="660" stroke="#1a1a1a" stroke-dasharray="2 6" />
+        <line x1="620" y1="60" x2="620" y2="660" stroke="#1a1a1a" stroke-dasharray="2 6" />
+        <line x1="900" y1="60" x2="900" y2="660" stroke="#1a1a1a" stroke-dasharray="2 6" />
+
+        <!-- Column headers -->
+        <text x="150" y="80" class="diag-col" text-anchor="middle">INGEST</text>
+        <text x="460" y="80" class="diag-col" text-anchor="middle">INDEX &amp; STORE</text>
+        <text x="760" y="80" class="diag-col" text-anchor="middle">RETRIEVE &amp; REASON</text>
+        <text x="1050" y="80" class="diag-col" text-anchor="middle">SERVE</text>
+
+        <!-- INGEST column -->
+        <g class="diag-box">
+          <rect x="40" y="120" width="220" height="70" rx="6" />
+          <text x="150" y="150" text-anchor="middle" class="diag-title">Document Sources</text>
+          <text x="150" y="172" text-anchor="middle" class="diag-sub">PDF · HTML · SharePoint · S3</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="40" y="230" width="220" height="70" rx="6" />
+          <text x="150" y="260" text-anchor="middle" class="diag-title">Ingestion Worker</text>
+          <text x="150" y="282" text-anchor="middle" class="diag-sub">.NET 8 · Azure Functions</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="40" y="340" width="220" height="70" rx="6" />
+          <text x="150" y="370" text-anchor="middle" class="diag-title">Chunking &amp; Cleaning</text>
+          <text x="150" y="392" text-anchor="middle" class="diag-sub">Semantic · hierarchical · overlap</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="40" y="450" width="220" height="70" rx="6" />
+          <text x="150" y="480" text-anchor="middle" class="diag-title">Entity Extraction</text>
+          <text x="150" y="502" text-anchor="middle" class="diag-sub">LLM-driven NER + typing</text>
+        </g>
+
+        <!-- INDEX column -->
+        <g class="diag-box diag-box--accent">
+          <rect x="350" y="180" width="220" height="80" rx="6" />
+          <text x="460" y="212" text-anchor="middle" class="diag-title">Azure AI Search</text>
+          <text x="460" y="234" text-anchor="middle" class="diag-sub">Hybrid: vector + BM25</text>
+          <text x="460" y="252" text-anchor="middle" class="diag-sub">text-embedding-3-large</text>
+        </g>
+
+        <g class="diag-box diag-box--graph">
+          <rect x="350" y="310" width="220" height="100" rx="6" />
+          <text x="460" y="342" text-anchor="middle" class="diag-title">Neo4j Graph DB</text>
+          <text x="460" y="364" text-anchor="middle" class="diag-sub">20+ node labels</text>
+          <text x="460" y="382" text-anchor="middle" class="diag-sub">40+ relationship types</text>
+          <text x="460" y="400" text-anchor="middle" class="diag-sub">Cypher + APOC</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="350" y="460" width="220" height="70" rx="6" />
+          <text x="460" y="490" text-anchor="middle" class="diag-title">Cosmos DB</text>
+          <text x="460" y="512" text-anchor="middle" class="diag-sub">Metadata · session state</text>
+        </g>
+
+        <!-- RETRIEVE column -->
+        <g class="diag-box diag-box--accent">
+          <rect x="650" y="160" width="220" height="100" rx="6" />
+          <text x="760" y="192" text-anchor="middle" class="diag-title">GraphRAG Retriever</text>
+          <text x="760" y="214" text-anchor="middle" class="diag-sub">Vector recall → rerank</text>
+          <text x="760" y="232" text-anchor="middle" class="diag-sub">→ graph expand (2-hop)</text>
+          <text x="760" y="250" text-anchor="middle" class="diag-sub">→ evidence assembly</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="650" y="310" width="220" height="70" rx="6" />
+          <text x="760" y="340" text-anchor="middle" class="diag-title">Cross-Encoder Rerank</text>
+          <text x="760" y="362" text-anchor="middle" class="diag-sub">MRR · nDCG · recall@k</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="650" y="430" width="220" height="80" rx="6" />
+          <text x="760" y="462" text-anchor="middle" class="diag-title">LLM Orchestration</text>
+          <text x="760" y="484" text-anchor="middle" class="diag-sub">Azure OpenAI · GPT-4</text>
+          <text x="760" y="502" text-anchor="middle" class="diag-sub">Grounded citations</text>
+        </g>
+
+        <!-- SERVE column -->
+        <g class="diag-box">
+          <rect x="940" y="200" width="220" height="80" rx="6" />
+          <text x="1050" y="232" text-anchor="middle" class="diag-title">ASP.NET Core API</text>
+          <text x="1050" y="254" text-anchor="middle" class="diag-sub">Minimal APIs · DI · Polly</text>
+          <text x="1050" y="272" text-anchor="middle" class="diag-sub">MediatR pipelines</text>
+        </g>
+
+        <g class="diag-box">
+          <rect x="940" y="320" width="220" height="70" rx="6" />
+          <text x="1050" y="350" text-anchor="middle" class="diag-title">Client Apps</text>
+          <text x="1050" y="372" text-anchor="middle" class="diag-sub">Web · Teams · Slack bots</text>
+        </g>
+
+        <g class="diag-box diag-box--obs">
+          <rect x="940" y="430" width="220" height="80" rx="6" />
+          <text x="1050" y="462" text-anchor="middle" class="diag-title">Observability</text>
+          <text x="1050" y="484" text-anchor="middle" class="diag-sub">OpenTelemetry</text>
+          <text x="1050" y="502" text-anchor="middle" class="diag-sub">Azure Monitor · eval dashboards</text>
+        </g>
+
+        <!-- Arrows - ingest flow -->
+        <line x1="150" y1="190" x2="150" y2="230" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="150" y1="300" x2="150" y2="340" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="150" y1="410" x2="150" y2="450" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arrow)" />
+
+        <!-- Cross-column arrows into index -->
+        <path d="M 260 375 Q 305 375 350 280" stroke="#00e5ff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+        <path d="M 260 485 Q 305 485 350 370" stroke="#00e5ff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+
+        <!-- Index → retrieve -->
+        <path d="M 570 220 Q 605 220 650 205" stroke="#00e5ff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+        <path d="M 570 360 Q 605 360 650 230" stroke="#00e5ff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+        <path d="M 570 495 Q 605 495 650 470" stroke="#555" stroke-width="1" stroke-dasharray="4 4" fill="none" marker-end="url(#arrow-dim)" />
+
+        <!-- Retrieve chain -->
+        <line x1="760" y1="260" x2="760" y2="310" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arrow)" />
+        <line x1="760" y1="380" x2="760" y2="430" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arrow)" />
+
+        <!-- Retrieve → serve -->
+        <path d="M 870 210 Q 905 210 940 240" stroke="#00e5ff" stroke-width="1.5" fill="none" marker-end="url(#arrow)" />
+        <path d="M 870 470 Q 905 470 940 470" stroke="#555" stroke-width="1" stroke-dasharray="4 4" fill="none" marker-end="url(#arrow-dim)" />
+
+        <!-- API → client -->
+        <line x1="1050" y1="280" x2="1050" y2="320" stroke="#00e5ff" stroke-width="1.5" marker-end="url(#arrow)" />
+
+        <!-- Legend -->
+        <g transform="translate(40, 600)">
+          <rect x="0" y="0" width="16" height="10" fill="none" stroke="#00e5ff" stroke-width="1.5" />
+          <text x="24" y="9" class="diag-legend">Hot path</text>
+
+          <rect x="110" y="0" width="16" height="10" fill="none" stroke="#555" stroke-width="1" stroke-dasharray="3 3" />
+          <text x="134" y="9" class="diag-legend">Async / telemetry</text>
+
+          <circle cx="268" cy="5" r="5" fill="#00e5ff" opacity="0.2" stroke="#00e5ff" />
+          <text x="282" y="9" class="diag-legend">Owned in production</text>
+        </g>
+      </svg>
+    </div>
+
+    <!-- Architecture highlights -->
+    <div class="architecture__highlights">
+      <div class="highlight">
+        <div class="highlight__num">01</div>
+        <div class="highlight__title">Hybrid retrieval</div>
+        <div class="highlight__body">Vector + BM25 in Azure AI Search with a cross-encoder reranker. Evaluated offline with MRR, nDCG, and recall@k before shipping.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight__num">02</div>
+        <div class="highlight__title">GraphRAG fusion</div>
+        <div class="highlight__body">Neo4j 2-hop traversals expand retrieved chunks into evidence subgraphs — the graph isn't decoration, it's part of the answer.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight__num">03</div>
+        <div class="highlight__title">.NET-native</div>
+        <div class="highlight__body">ASP.NET Core Minimal APIs, MediatR pipelines, Polly resilience, EF Core over Cosmos, Neo4j .NET driver. No Python stubs glued together.</div>
+      </div>
+      <div class="highlight">
+        <div class="highlight__num">04</div>
+        <div class="highlight__title">Eval in the loop</div>
+        <div class="highlight__body">OpenTelemetry traces every retrieval and generation. Dashboards track hallucination rate and citation coverage, not just latency.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Work timeline -->
+  <section class="work" id="work">
+    <div class="section__label">
+      <span class="section__num">03</span>
+      <span>Selected work</span>
+    </div>
+
+    <h2 class="work__heading">Three roles, one thread —<br />shipping applied AI that <span class="accent">stays up.</span></h2>
+
+    <div class="timeline">
+      <article class="tl-entry">
+        <div class="tl-date">Mar 2025 — Present</div>
+        <div class="tl-connector"></div>
+        <div class="tl-card">
+          <div class="tl-role">Sr. Software Engineer · RAG &amp; Knowledge Systems</div>
+          <div class="tl-company">Sprouts AI <span class="tl-location">· Chicago, IL</span></div>
+          <ul class="tl-list">
+            <li><strong>5M+ docs, 50K+ daily queries.</strong> Owned Azure AI Search hybrid retrieval with semantic chunking, embeddings, and cross-encoder reranking. <span class="tl-lift">+42% relevance</span>.</li>
+            <li><strong>Company-wide Neo4j platform.</strong> Domain ontology with 20+ node labels, 40+ relationship types, Cypher schema constraints, GraphRAG hybrid. Adopted as system-of-record.</li>
+            <li><strong>.NET 8 / ASP.NET Core backend.</strong> Minimal APIs with DI, Polly retry/circuit-breaker, MediatR, EF Core over Cosmos, Neo4j .NET driver. <span class="tl-lift">Sub-2s p95</span>.</li>
+            <li><strong>Production observability.</strong> Chunking tuning, incremental indexing, OpenTelemetry + Azure Monitor. <span class="tl-lift">-70% reindex, -45% MTTR</span>.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-entry">
+        <div class="tl-date">Aug 2023 — Mar 2025</div>
+        <div class="tl-connector"></div>
+        <div class="tl-card">
+          <div class="tl-role">Software Engineer · LLM Integrations &amp; Backend</div>
+          <div class="tl-company">Resilience Inc <span class="tl-location">· Chicago, IL</span></div>
+          <ul class="tl-list">
+            <li><strong>Production RAG for 50K+ MAU.</strong> 2M+ pages, hierarchical chunking, grounded citations. <span class="tl-lift">+38% answer accuracy, -25% support tickets</span>.</li>
+            <li><strong>Neo4j knowledge graph.</strong> Content ontology with 15+ node types, parameterized Cypher + APOC for multi-hop, ETL from 100K+ docs.</li>
+            <li><strong>ASP.NET Core 6/7 microservices.</strong> JWT auth, middleware pipelines, EF Core migrations, SignalR, Key Vault. 10K+ concurrent connections.</li>
+            <li><strong>End-to-end delivery.</strong> Small team. Architecture to prod to observability. Zero-downtime rollouts for mission-critical AI features.</li>
+          </ul>
+        </div>
+      </article>
+
+      <article class="tl-entry">
+        <div class="tl-date">Apr 2019 — Aug 2023</div>
+        <div class="tl-connector"></div>
+        <div class="tl-card">
+          <div class="tl-role">Software Engineer · AI/ML &amp; Platform Lead</div>
+          <div class="tl-company">Tata Steel</div>
+          <ul class="tl-list">
+            <li><strong>Company-wide document analysis platform on Azure.</strong> Laid the foundational .NET Core / C# platform adopted across the enterprise. <span class="tl-lift">+40% faster, 99.99% uptime</span>.</li>
+            <li><strong>Knowledge graph foundation.</strong> Graph schema linking courses, competencies, and employees; traversal-powered personalized recommendations for 20K+ users.</li>
+            <li><strong>ASP.NET Core + LLM services.</strong> Prompt orchestration pipelines, embedding generation workers, Azure-hosted vector retrieval with EF Core and DI.</li>
+            <li><strong>CI/CD &amp; observability foundation.</strong> Azure DevOps, Jenkins, Git. Automated model training → eval → deploy. <span class="tl-lift">-30% release cycle</span>.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="section__label">
+      <span class="section__num">04</span>
+      <span>Open source &amp; side work</span>
+    </div>
+
+    <h2 class="projects__heading">Code you can actually <span class="accent">read.</span></h2>
+
+    <div class="projects__grid">
+      <a href="https://github.com/devthedevil/LangChain-Chat-with-Search" target="_blank" rel="noopener" class="project">
+        <div class="project__header">
+          <span class="project__tag">RAG · AI Agent</span>
+          <span class="project__arrow">↗</span>
+        </div>
+        <h3 class="project__title">LangChain — Chat with Search</h3>
+        <p class="project__desc">Production-style RAG agent with LLM tool selection, real-time web + Wikipedia retrieval, and agentic reasoning. Demonstrates document retrieval, LLM orchestration, and evaluation patterns that underpin enterprise RAG.</p>
+        <div class="project__stack">
+          <span>Python</span><span>LangChain</span><span>Groq</span><span>Streamlit</span>
+        </div>
+      </a>
+
+      <a href="https://tradesentinel.vercel.app/" target="_blank" rel="noopener" class="project">
+        <div class="project__header">
+          <span class="project__tag">Full-stack · Live</span>
+          <span class="project__arrow">↗</span>
+        </div>
+        <h3 class="project__title">TradeSentinel</h3>
+        <p class="project__desc">End-to-end production platform with real-time data ingestion, structured storage, and graph-based relationship analysis. Applied engineering from architecture through live deployment.</p>
+        <div class="project__stack">
+          <span>TypeScript</span><span>Node.js</span><span>PostgreSQL</span><span>Vercel</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/devthedevil/Realtime-Stock-Market-Analysis" target="_blank" rel="noopener" class="project">
+        <div class="project__header">
+          <span class="project__tag">Streaming · Pipeline</span>
+          <span class="project__arrow">↗</span>
+        </div>
+        <h3 class="project__title">Real-time Market Pipeline</h3>
+        <p class="project__desc">Distributed streaming pipeline ingesting 1M+ events/sec via Kafka, low-latency consumers, S3 persistence. Analogous to large-scale document ingest patterns for RAG.</p>
+        <div class="project__stack">
+          <span>Kafka</span><span>Python</span><span>AWS</span><span>Distributed</span>
+        </div>
+      </a>
+
+      <a href="https://ieeexplore.ieee.org/document/10094480" target="_blank" rel="noopener" class="project">
+        <div class="project__header">
+          <span class="project__tag">IEEE Publication</span>
+          <span class="project__arrow">↗</span>
+        </div>
+        <h3 class="project__title">Recommender Systems Research</h3>
+        <p class="project__desc">IEEE INCOFT 2021 paper on feature engineering and improved error functions for recommendation systems — foundational retrieval + ranking ideas that map directly onto RAG eval.</p>
+        <div class="project__stack">
+          <span>IEEE</span><span>Python</span><span>ML</span><span>Peer-reviewed</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Stack -->
+  <section class="stack-section">
+    <div class="section__label">
+      <span class="section__num">05</span>
+      <span>What's in the toolbox</span>
+    </div>
+
+    <div class="stack-grid">
+      <div class="stack-col">
+        <div class="stack-col__label">RAG &amp; LLM</div>
+        <ul class="stack-list">
+          <li>Azure OpenAI</li>
+          <li>Azure AI Search</li>
+          <li>LangChain · LangGraph</li>
+          <li>Embeddings + rerank</li>
+          <li>Vector DBs (Pinecone, Weaviate)</li>
+          <li>Evaluation harnesses</li>
+        </ul>
+      </div>
+
+      <div class="stack-col">
+        <div class="stack-col__label">Knowledge Graphs</div>
+        <ul class="stack-list">
+          <li>Neo4j</li>
+          <li>Cypher · APOC</li>
+          <li>Schema &amp; ontology design</li>
+          <li>GraphRAG</li>
+          <li>Neo4j .NET driver</li>
+          <li>RDF / SPARQL</li>
+        </ul>
+      </div>
+
+      <div class="stack-col">
+        <div class="stack-col__label">.NET &amp; Backend</div>
+        <ul class="stack-list">
+          <li>.NET 6 / 7 / 8</li>
+          <li>ASP.NET Core</li>
+          <li>Entity Framework Core</li>
+          <li>MediatR · Polly · SignalR</li>
+          <li>Minimal APIs · DI</li>
+          <li>Python · C++</li>
+        </ul>
+      </div>
+
+      <div class="stack-col">
+        <div class="stack-col__label">Azure &amp; Ops</div>
+        <ul class="stack-list">
+          <li>Functions · App Service</li>
+          <li>Cosmos DB · Blob</li>
+          <li>AKS · Container Apps</li>
+          <li>Azure DevOps · Monitor</li>
+          <li>OpenTelemetry</li>
+          <li>Key Vault · App Config</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="section__label">
+      <span class="section__num">06</span>
+      <span>Let's build it</span>
+    </div>
+
+    <h2 class="contact__heading">
+      Ground-floor team?<br />
+      Real RAG, real graph, real users?<br />
+      <span class="accent italic">Let's talk.</span>
+    </h2>
+
+    <div class="contact__links">
+      <a href="mailto:devkumar.dklv@gmail.com" class="contact__link">
+        <span class="contact__link-label">Email</span>
+        <span class="contact__link-value">devkumar.dklv@gmail.com</span>
+        <span class="contact__link-arrow">→</span>
+      </a>
+      <a href="tel:+13125328223" class="contact__link">
+        <span class="contact__link-label">Phone</span>
+        <span class="contact__link-value">+1 (312) 532-8223</span>
+        <span class="contact__link-arrow">→</span>
+      </a>
+      <a href="https://github.com/devthedevil" target="_blank" rel="noopener" class="contact__link">
+        <span class="contact__link-label">GitHub</span>
+        <span class="contact__link-value">@devthedevil</span>
+        <span class="contact__link-arrow">↗</span>
+      </a>
+      <a href="https://leetcode.com/u/dev_kumar_dklv/" target="_blank" rel="noopener" class="contact__link">
+        <span class="contact__link-label">LeetCode</span>
+        <span class="contact__link-value">@dev_kumar_dklv</span>
+        <span class="contact__link-arrow">↗</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer__left">
+      <span class="footer__mark">◆</span>
+      <span>Dev Kumar</span>
+      <span class="footer__sep">·</span>
+      <span class="footer__muted">Senior Software Engineer</span>
+    </div>
+    <div class="footer__right">
+      <span class="footer__muted">Built in a weekend. Deployed on GitHub Pages.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
